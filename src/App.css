@@ -1,0 +1,35 @@
+:root {
+  --font-color: #333333;
+  --main-color: #ff5638;
+  --main-color-opacity: #333333d8;
+  --border-width: 2px;
+
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-7: 56px;
+  --spacing-8: 64px;
+  --spacing-9: 72px;
+  --spacing-10: 80px;
+  --spacing-11: 88px;
+  --spacing-12: 96px;
+}
+
+.App {
+  text-align: center;
+}
+
+.image-credit {
+  position: relative;
+  top: -15px;
+  font-style: italic;
+  color: grey;
+}
+
+.white a {
+  color: white !important;
+  border-bottom: none !important;
+}
