@@ -1,0 +1,269 @@
+<!---Log-in-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <title>Portfolio</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        /* font-family: 'Josefin Sans', sans-serif; */
+        font-family: "Poppins", sans-serif;
+        max-height: 100vh;
+        background-image: url(https://images.unsplash.com/photo-1610465299993-e6675c9f9efa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #060a10;
+      }
+
+      /*nav */
+      header {
+        padding: 1.7rem 1rem;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        max-width: 80%;
+        margin: auto;
+        align-items: center;
+        background-color: transparent;
+      }
+
+      .logo {
+        /* display: inline; */
+        /* padding-left: 0.5cm; */
+        font-size: 1.3rem;
+        font-weight: 800;
+      }
+
+      .logo a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.97rem;
+        font-weight: 600;
+        letter-spacing: 0.7px;
+        padding: 1rem;
+        padding: 0.4rem 1rem;
+      }
+
+      nav a.active,
+      nav a:hover {
+        color: #00e8f8;
+        border-radius: 1rem;
+        transition: all.3s ease-in-out;
+      }
+
+      #click {
+        display: none;
+      }
+
+      .menu i {
+        color: #00e8f8;
+      }
+
+      .menu {
+        display: none;
+      }
+
+      /* Nav */
+
+      section {
+        margin: 2rem 8.5rem;
+      }
+
+      .main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5rem auto;
+      }
+
+      .main h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #fff;
+        /* animation: check 1s ease forwards;
+            animation-delay: .1s; */
+      }
+
+      .main p {
+        margin-top: 1rem;
+        font-size: 0.98rem;
+        color: #fff;
+      }
+
+      .social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.4rem;
+        margin-top: 1.7rem;
+      }
+
+      .social a {
+        color: #00e8f8;
+        font-size: 1rem;
+        border: 1.6px solid #00e8f8;
+        border-radius: 50%;
+        padding: 0.35rem;
+        text-align: center;
+        width: 26px;
+      }
+
+      .social a:hover {
+        color: #1f252e;
+        background-color: #00e8f8;
+        box-shadow: 0 0 20px #00e8f8;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .main h1 span:nth-child(1) {
+        font-size: 1.5rem;
+      }
+
+      .main h1 span:nth-child(2) {
+        color: #00e8f8;
+      }
+
+      /* .images {
+        background-image: url(https://images.unsplash.com/photo-1610465299993-e6675c9f9efa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80);
+        background-repeat: no-repeat;
+        background-position: 0 -75px;
+        -webkit-box-shadow: 0 10px 10px -10px #000000;
+        -moz-box-shadow: 0 10px 10px -10px #000000;
+        box-shadow: 0px 16px 4px -10px #00e8f8;
+        width: 528px;
+        background-size: cover;
+      } */
+
+      /* @keyframes check {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        } */
+
+      @media only screen and (max-width: 480px) {
+        .menu {
+          display: block;
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #244d61;
+        }
+
+        header {
+          padding: 0.7rem 1rem;
+          align-items: center;
+          max-width: 100%;
+        }
+
+        nav {
+          position: absolute;
+          display: grid;
+          top: 75px;
+          text-align: center;
+          background-color: #1f252e;
+          left: -100%;
+          z-index: 1;
+          width: 100%;
+        }
+
+        #click:checked ~ nav {
+          left: 0%;
+          transition: all 0.3s ease;
+        }
+
+        section {
+          margin: 1rem 1.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <a href="#">Ashu.BIO</a>
+      </div>
+      <input type="checkbox" id="click" />
+      <label for="click" class="mainicon">
+        <div class="menu">
+          <i class="bi bi-list"></i>
+        </div>
+      </label>
+      <nav>
+        <ul>
+        <li><a href="#ashu">Home</a></nav></li>
+        <a href="About.html">About</a>
+        <a href="friends.html">propritor</a>
+        <a href="new.html">login</a>
+        <a href="star.html">open</a>
+        <a href="contact.html">Contact</a>
+        </ul>
+        <pre>
+      </nav>
+    </header>
+
+    <section>
+      /*<!---div class="ashu"-->*/
+      <div class="main">
+        <div class="detail">
+          <!---Sarah -->
+          <h1>
+            <span>Hi, It's Me</span> <br />
+            I'm <span style="color: #00e8f8">Ashwath</span>
+          </h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing <br />
+            and typesetting industry.
+          </p>
+          <div class="social">
+            <a href="https://github.com/Chenna-Ashwath-Narayana"
+              ><i class="bi bi-github"></i
+            ></a>
+            <a href="#"><i class="bi bi-google"></i></a>
+            <a href="https://www.instagram.com/chenna_ashwath/"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="pro.html\"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.facebook.com/rohit.narayana.71/"><i class="bi bi-facebook"></i></a>
+          </div>
+        </div>
+        <div class="images">
+          <img src="/img/pass.png" alt="" width="100%" />
+        </div>
+      </div>
+    </section>
+  </body>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+  </style>
+
+  <!-- <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+  </style> -->
+</html>
